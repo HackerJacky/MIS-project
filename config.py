@@ -8,7 +8,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # ─── OLLAMA 設定 ───────────────────────────────────────────
 OLLAMA_BASE_URL = "http://localhost:11434"
-OLLAMA_MODEL    = "gemma3:4b"       # 可改為 gemma3:1b, gemma3:12b 等
+OLLAMA_MODEL    = "gemma3:1b"       # 輕量版，可改為 gemma3:4b（需要 4GB RAM）
 OLLAMA_TIMEOUT  = 180               # 秒
 
 # ─── 嵌入模型設定 ────────────────────────────────────────────

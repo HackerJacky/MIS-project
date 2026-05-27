@@ -175,21 +175,18 @@ class RAGEngine:
 
     @staticmethod
     def _build_prompt(question: str, context: str) -> str:
-        return f"""你是一位專業的企業知識庫助理，請根據以下提供的參考資料，以繁體中文回答使用者的問題。
-
-回答規則：
-1. 優先引用參考資料中的具體內容來回答
-2. 若參考資料不足以完整回答，請明確說明哪些部分無資料支持
-3. 回答請條理清晰，必要時使用條列式
-4. 不要捏造或猜測不在資料中的資訊
-
-=== 參考資料 ===
+        return f"""<context>
 {context}
+</context>
 
-=== 使用者問題 ===
-{question}
+根據以上參考資料，請用繁體中文回答以下問題。
+- 直接給出答案，不要重複問題
+- 條列重點，清楚說明
+- 若資料不足請說明
 
-=== 回答 ==="""
+問題：{question}
+
+回答：""""
 
     @staticmethod
     def _ollama_generate(prompt: str) -> str:
