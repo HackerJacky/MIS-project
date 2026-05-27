@@ -186,7 +186,7 @@ class RAGEngine:
 
 問題：{question}
 
-回答：""""
+回答："""
 
     @staticmethod
     def _ollama_generate(prompt: str) -> str:
