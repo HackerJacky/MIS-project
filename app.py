@@ -1,6 +1,6 @@
 """
 Flask Web Server
-提供 RAG 知識庫的 REST API 與前端網頁
+RAG的REST API 與前端網頁
 """
 from flask import Flask, render_template, request, jsonify, Response, stream_with_context
 
@@ -10,8 +10,6 @@ from config     import FLASK_HOST, FLASK_PORT
 app = Flask(__name__)
 rag = RAGEngine()
 
-
-# ─── 頁面路由 ─────────────────────────────────────────────────────────────────
 
 @app.route('/')
 def index():
